@@ -14,7 +14,7 @@ def scrape_table(root):
     for row in rows:
         # Set up our data record - we'll need it later
         record = {}
-        table_cells = row.cssselect("th")
+        table_cells = row.cssselect("td")
         if table_cells: 
             record['Release date'] = table_cells[0].text
             record['Artist'] = table_cells[1].text
@@ -45,5 +45,5 @@ def scrape_table(root):
 # call a function to scrape the first page in the series.
 # ---------------------------------------------------------------------------
 base_url = 'https://en.wikipedia.org/wiki/List_of_2019_albums'
-#starting_url = urlparse.urljoin(base_url, 'scraping-for-everyone/webpages/example_table_1.html')
+starting_url = urlparse.urljoin(base_url, '/List_of_2019_albums')
 #scrape_and_look_for_next_link(starting_url)
